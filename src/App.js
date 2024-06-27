@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Title, createTheme, MantineProvider } from '@mantine/core';
+import Table1 from './components/Table1';
+import Table2 from './components/Table2';
 
-function App() {
+const App = () => {
+
+  const theme = createTheme({
+
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <MantineProvider theme={theme}>
+    <Container>
+      <Title order={1}>Indian Agriculture Analytics</Title>
+      <Title order={2}>Table 1: Yearly Crop Production</Title>
+      <Table1 /><br />
+      <Title order={2}>Table 2: Crop Averages (1950-2020)</Title>
+      <Table2 />
+    </Container>
+    </MantineProvider>
+
   );
-}
+};
 
 export default App;
